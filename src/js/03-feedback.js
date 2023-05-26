@@ -49,4 +49,3 @@ function onSubmit(even) {
 
 //   console.log(`Login: ${login.value}, Password: ${password.value}`);
 //   event.currentTarget.reset();
-//
