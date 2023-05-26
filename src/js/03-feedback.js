@@ -7,9 +7,10 @@ form.addEventListener(`submit`, onSubmit);
 
 function handledInput(even) {
   even.preventDefault();
-  formInput[even.target.name] = even.target.value;
-  formInput[even.target.name] = even.target.value;
-  localStorage.setItem(LocKey, JSON.stringify(formInput) || 0);
+  const {
+    elements: { email, message },
+  } = even.target.value;
+  localStorage.setItem(LocKey, JSON.stringify(elements) || 0);
 }
 function checkSave() {
   const savedSettings = JSON.parse(localStorage.getItem(LocKey));
@@ -18,16 +19,15 @@ function checkSave() {
 
 function onSubmit(even) {
   even.preventDefault();
-  if (even.target.value === '') {
+  if (email.value === '' || message.value === '') {
     console.log(even.target.value);
     return;
   }
-}
-even.currentTarget.reset();
-localStorage.removeItem(LocKey);
-console.log(formInput);
-const formInput = {};
 
+  even.currentTarget.reset();
+  localStorage.removeItem(LocKey);
+  const form = {};
+}
 // form.addEventListener('submit', handleSubmit);
 
 // function handleSubmit(event) {
