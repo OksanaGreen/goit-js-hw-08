@@ -19,15 +19,11 @@ function handledInput(even) {
 function checkSave() {
   const savedSettings = JSON.parse(localStorage.getItem(LocKey));
   if (savedSettings) {
-    if (even.target.value === null) {
-      return;
+    if (!even.target.value === null) {
+      data.email = input.value;
+      data.message = textarea.value;
     }
-    if (form.value === '') {
-      return;
-    }
-    !LocKey === null;
-    input.value = savedSettings.email;
-    textarea.value = savedSettings.message;
+
     console.log(input.value);
     console.log(textarea.value);
   }
@@ -36,6 +32,9 @@ function checkSave() {
 }
 function onSubmit(even) {
   even.preventDefault();
+  if (input.value === '' || textarea.value === '') {
+    return;
+  }
 
   even.currentTarget.reset();
   localStorage.removeItem(LocKey);
