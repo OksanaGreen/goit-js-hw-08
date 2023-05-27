@@ -18,9 +18,10 @@ function handledInput(even) {
   console.log(data);
 }
 function checkSave() {
-  const savedSettings = JSON.parse(localStorage.getItem(LocKey));
+  const savedSettings = JSON.parse(localStorage.getItem(data));
   if (savedSettings) {
-    !savedSettings === null;
+    console.log(data);
+    !data === null;
     data.email = input.value;
     data.message = textarea.value;
     console.log(input.value);
