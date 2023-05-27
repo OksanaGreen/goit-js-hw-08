@@ -1,8 +1,8 @@
 import throttle from 'lodash.throttle';
 const form = document.querySelector('.feedback-form');
 const LocKey = 'feedback-form';
-const input = document.querySelector('email');
-const textarea = document.querySelector('message');
+const input = document.querySelector('name');
+const textarea = document.querySelector('name');
 
 form.addEventListener(`input`, throttle(handledInput), 500);
 form.addEventListener(`submit`, onSubmit);
@@ -12,8 +12,7 @@ function handledInput(even) {
   even.preventDefault();
 
   data[even.target.name] = even.target.value;
-  console.log(email.value);
-  console.log(message.value);
+  console.log(data);
   localStorage.setItem(LocKey, JSON.stringify(data));
   console.log(data);
 }
@@ -22,8 +21,8 @@ function checkSave() {
   if (savedSettings) {
     console.log(data);
     !data === null;
-    data.email = input.value;
-    data.message = textarea.value;
+    input.value = savedSettings.email;
+    textarea.value = savedSettings.message;
     console.log(input.value);
     console.log(textarea.value);
   }
