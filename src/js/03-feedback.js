@@ -28,14 +28,14 @@ function checkSave() {
     console.log(textarea.value);
   }
   console.log(savedSettings);
+
   return;
 }
 function onSubmit(even) {
   even.preventDefault();
   if (input.value === '' || textarea.value === '') {
-    return;
+    return console.log('Please fill in all the fields!');
   }
-
   even.currentTarget.reset();
   localStorage.removeItem(LocKey);
 }
