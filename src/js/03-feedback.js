@@ -20,8 +20,8 @@ function checkSave() {
   const savedSettings = JSON.parse(localStorage.getItem(LocKey));
   if (savedSettings) {
     if (!even.target.value === null) {
-      data.email = input.value;
-      data.message = textarea.value;
+      input.value = data.email;
+      textarea.value = data.message;
     }
 
     console.log(input.value);
