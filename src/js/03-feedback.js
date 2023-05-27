@@ -6,14 +6,16 @@ const textarea = document.querySelector('message');
 
 form.addEventListener(`input`, throttle(handledInput), 500);
 form.addEventListener(`submit`, onSubmit);
+checkSave();
 const data = {};
 function handledInput(even) {
   even.preventDefault();
-  console.log(email.value);
-  console.log(message.value);
 
   data[even.target.name] = even.target.value;
+  console.log(email.value);
+  console.log(message.value);
   localStorage.setItem(LocKey, JSON.stringify(data));
+  console.log(data);
 }
 function checkSave() {
   const savedSettings = JSON.parse(localStorage.getItem(LocKey));
@@ -21,6 +23,8 @@ function checkSave() {
     !savedSettings === null;
     data.email = input.value;
     data.message = textarea.value;
+    console.log(input.value);
+    console.log(textarea.value);
   }
   console.log(savedSettings);
   return;
@@ -32,6 +36,4 @@ function onSubmit(even) {
   if (even.target.value === null) {
     return;
   }
-  console.log(Email);
-  console.log(Message);
 }
