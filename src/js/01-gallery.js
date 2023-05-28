@@ -1,10 +1,3 @@
-// Add imports above this line
-// import myFunc from './path/to/my-func';
-// import MyClass from './path/to/my-class';
-
-// myFunc();
-
-// const inst = new MyClass();
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 import { galleryItems } from './gallery-items.js';

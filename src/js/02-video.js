@@ -10,7 +10,7 @@ player.on(
     localStorage.setItem(STOREGE_KEY, data.seconds);
   }, 1000)
 );
-// console.log('played the video!');
+// console.log('data.seconds');
 const timePause = localStorage.getItem(STOREGE_KEY);
 console.log(timePause);
 if (timePause) {
